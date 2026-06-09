@@ -17,7 +17,9 @@ app.use(express.json());
 
 // ── Routes 
 
-
+app.get('/', (req, res) => {
+    res.json({ success: true, message: 'DevPulse API is running 🚀' });
+});
 app.use('/api/auth',   authRoutes);
 app.use('/api/issues', issuesRoutes);
 
