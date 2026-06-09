@@ -7,7 +7,7 @@ import authRoutes from './modules/auth/auth.routes';
 import issuesRoutes from './modules/issues/issues.routes';
 import { errorHandler } from './middleware/errorHandler';
 
-dotenv.config();
+// dotenv.config();
 
 const app = express();
 
