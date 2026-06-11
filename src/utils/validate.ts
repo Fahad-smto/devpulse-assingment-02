@@ -1,11 +1,11 @@
 // src/utils/validate.ts
 
-// export const isRequired = (value: unknown, fieldName: string): string | null => {
-//     if (value === undefined || value === null || value === '') {
-//         return `${fieldName} is required`;
-//     }
-//     return null;
-// };
+export const isRequired = (value: unknown, fieldName: string): string | null => {
+    if (value === undefined || value === null || value === '') {
+        return `${fieldName} is required`;
+    }
+    return null;
+};
 
 export const maxLength = (value: string, max: number, fieldName: string): string | null => {
     if (value.length > max) {
