@@ -7,12 +7,12 @@ export const isRequired = (value: unknown, fieldName: string): string | null => 
     return null;
 };
 
-export const maxLength = (value: string, max: number, fieldName: string): string | null => {
-    if (value.length > max) {
-        return `${fieldName} must be at most ${max} characters`;
-    }
-    return null;
-};
+// export const maxLength = (value: string, max: number, fieldName: string): string | null => {
+//     if (value.length > max) {
+//         return `${fieldName} must be at most ${max} characters`;
+//     }
+//     return null;
+// };
 
 export const minLength = (value: string, min: number, fieldName: string): string | null => {
     if (value.length < min) {
