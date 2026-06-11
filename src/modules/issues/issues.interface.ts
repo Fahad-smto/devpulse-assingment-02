@@ -1,11 +1,11 @@
 // src/modules/issues/issues.interface.ts
 
-export interface ICreateIssue {
-    title: string;
-    description: string;
-    type: string;
-    reporter_id: number;
-}
+// export interface ICreateIssue {
+//     title: string;
+//     description: string;
+//     type: string;
+//     reporter_id: number;
+// }
 
 export interface IUpdateIssue {
     title?: string;
