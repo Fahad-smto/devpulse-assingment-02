@@ -1,5 +1,5 @@
 // src/utils/response.ts
-// import type { Response } from 'express';
+import type { Response } from 'express';
 
 export const sendSuccess = (
     res: Response,
