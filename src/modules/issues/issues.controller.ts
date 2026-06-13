@@ -9,7 +9,7 @@ import {
     minLength,
     isOneOf,
     collectErrors,
-// } from '../../utils/validate';
+} from '../../utils/validate';
 
 const createIssue = async (req: Request, res: Response) => {
     try {
