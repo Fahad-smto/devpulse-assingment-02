@@ -11,33 +11,33 @@ import {
     collectErrors,
 } from '../../utils/validate';
 
-const createIssue = async (req: Request, res: Response) => {
-    try {
-        const { title, description, type } = req.body;
+// const createIssue = async (req: Request, res: Response) => {
+//     try {
+//         const { title, description, type } = req.body;
 
-        const errors = collectErrors(
-            isRequired(title,       'title'),
-            isRequired(description, 'description'),
-            isRequired(type,        'type'),
-            title       ? maxLength(title,       150, 'title')                              : null,
-            description ? minLength(description, 20,  'description')                       : null,
-            type        ? isOneOf(type, ['bug', 'feature_request'], 'type')                 : null
-        );
+//         const errors = collectErrors(
+//             isRequired(title,       'title'),
+//             isRequired(description, 'description'),
+//             isRequired(type,        'type'),
+//             title       ? maxLength(title,       150, 'title')                              : null,
+//             description ? minLength(description, 20,  'description')                       : null,
+//             type        ? isOneOf(type, ['bug', 'feature_request'], 'type')                 : null
+//         );
 
-        if (errors.length > 0) {
-            return sendError(res, StatusCodes.BAD_REQUEST, 'Validation failed', errors);
-        }
+//         if (errors.length > 0) {
+//             return sendError(res, StatusCodes.BAD_REQUEST, 'Validation failed', errors);
+//         }
 
-        // reporter_id comes from the decoded JWT — not from the request body
-        const reporter_id = req.user!.id;
+//         // reporter_id comes from the decoded JWT — not from the request body
+//         const reporter_id = req.user!.id;
 
-        const issue = await issueServices.createIssueInDB({ title, description, type, reporter_id });
-        return sendSuccess(res, StatusCodes.CREATED, 'Issue created successfully', issue);
+//         const issue = await issueServices.createIssueInDB({ title, description, type, reporter_id });
+//         return sendSuccess(res, StatusCodes.CREATED, 'Issue created successfully', issue);
 
-    } catch (error: unknown) {
-        return sendError(res, StatusCodes.INTERNAL_SERVER_ERROR, 'Something went wrong.');
-    }
-};
+//     } catch (error: unknown) {
+//         return sendError(res, StatusCodes.INTERNAL_SERVER_ERROR, 'Something went wrong.');
+//     }
+// };
 
 const getAllIssues = async (req: Request, res: Response) => {
     try {
