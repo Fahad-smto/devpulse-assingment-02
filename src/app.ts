@@ -32,6 +32,6 @@ app.use((req, res) => {
 });
 
 // ── Global error handler  ───────────────────────────────────────
-// app.use(errorHandler);
+app.use(errorHandler);
 
 // export default app;
