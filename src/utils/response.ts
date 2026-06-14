@@ -14,15 +14,15 @@ export const sendSuccess = (
     });
 };
 
-export const sendError = (
-    res: Response,
-    statusCode: number,
-    message: string,
-    errors?: unknown
-) => {
-    return res.status(statusCode).json({
-        success: false,
-        message,
-        errors,
-    });
-};
+// export const sendError = (
+//     res: Response,
+//     statusCode: number,
+//     message: string,
+//     errors?: unknown
+// ) => {
+//     return res.status(statusCode).json({
+//         success: false,
+//         message,
+//         errors,
+//     });
+// };
